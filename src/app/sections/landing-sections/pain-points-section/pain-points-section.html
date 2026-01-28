@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+
+    <div class="pain-points-grid">
+      @for (point of painPoints; track point) {
+        <app-card-component
+          [icon]="point.icon"
+          [title]="point.title"
+          [text]="point.text"
+        ></app-card-component>
+      }
+    </div>
+
+    <p class="pain-points-footer">
+      „DINGE, DIE DU WIRKLICH LIEBST,
+      <br>
+      KOMMEN NIEMALS AUS DER MODE!"
+    </p>
+
+  </div>
+</section>

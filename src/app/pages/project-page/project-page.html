@@ -1,0 +1,21 @@
+<app-header-section></app-header-section>
+<app-global-hero-section
+  [backgroundImage]="backgroundImage"
+  [line1]="line1"
+  [line2]="line2"
+  [line3]="line3"
+></app-global-hero-section>
+@for (project of projectDisplays; track project) {
+  <app-project-display-section
+    [beforeImage]="project.beforeImage"
+    [afterImage]="project.afterImage"
+    [firstSmallImage]="project.firstSmallImage"
+    [secondSmallImage]="project.secondSmallImage"
+    [title]="project.title"
+    [text]="project.text"
+    [layout]="project.layout"
+    [background]="project.background"
+  ></app-project-display-section>
+}
+<app-contact-section></app-contact-section>
+<app-footer-section></app-footer-section>

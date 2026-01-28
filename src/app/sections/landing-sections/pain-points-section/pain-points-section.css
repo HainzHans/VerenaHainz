@@ -1,0 +1,24 @@
+.pain-points-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile */
+  gap: 2rem;
+  align-items: stretch; /* WICHTIG: alle Cards gleich hoch */
+}
+
+.pain-points-footer {
+  text-align: center;
+  color: var(--primary-brown);
+  font-weight: bold;
+  padding-top: 2rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1;
+}
+
+
+/* ab 700px → 3 Spalten */
+@media (min-width: 1024px) {
+  .pain-points-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+

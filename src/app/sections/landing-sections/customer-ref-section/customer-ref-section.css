@@ -1,0 +1,59 @@
+/* Full-width Section */
+.customer-ref {
+  width: 100%;
+  background: var(--primary-green);
+  color: var(--primary-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+/* Inhalt */
+.customer-ref-content {
+  position: relative;
+  text-align: center;
+  max-width: 50%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hintergrund-Anführungszeichen */
+.quote-background {
+  position: absolute;
+  inset: 0; /* füllt die gesamte Box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.quote-background span {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(6rem, 20vw, 12rem);
+  color: rgba(255, 255, 255, 0.15);
+  user-select: none;
+}
+
+/* Text */
+.customer-text {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 90%;
+  z-index: 2;
+  position: relative;
+  font-style: italic;
+}
+
+/* Kundenname */
+.customer-name {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  z-index: 2;
+  position: relative;
+}

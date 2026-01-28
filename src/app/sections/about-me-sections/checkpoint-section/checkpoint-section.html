@@ -1,0 +1,17 @@
+<section class="checklist-container">
+  <div class="container">
+
+    <h2 class="checklist-title title-text">10 DINGE AN DIE ICH WIRKLICH GLAUBE</h2>
+
+    <div class="checklist-grid">
+
+      @for ( item of checkpoints; track item) {
+        <div class="check-item">
+          <img src="assets/icons/check.svg" class="w-6 h-6" alt="box-icon"/>
+          <span>{{item.text}}</span>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

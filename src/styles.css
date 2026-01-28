@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Colors */
+  --primary-brown: #ae8034;
+  --primary-brown-transparent: rgba(174, 128, 52, 0.50);
+  --primary-green: #605f4b;
+  --secondary-green: #3e493e;
+  --primary-white: #efebe0;
+  --primary-white-transparent: rgba(239, 235, 224, 0.60);
+  --secondary-white: #ffffff;
+
+  --font-display: 'Poppins', sans-serif;
+}
+
+.primary-white {
+  color: var(--primary-white);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Abel', sans-serif;
+  background: white;
+}
+
+
+
+/* ---Fonts--- */
+/* Abel */
+@font-face {
+  font-family: 'Abel';
+  src: url('assets/fonts/Abel-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Great Vibes */
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('assets/fonts/GreatVibes-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
+span, a { font-size: clamp(0.9rem, 1.5vw, 1.1rem); }
+
+.title-text {
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+
+.font-display {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+.desktop-hidden {
+  display: block;
+}
+
+/* GLOBAL CONTAINER */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 2rem; /* 16px */
+  padding-right: 2rem; /* 16px */
+}
+
+
+.shadow {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* FLEX UTILITIES */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* SECTION SPACING */
+.section {
+  padding-top: 2.5rem;  /* 40px */
+  padding-bottom: 2.5rem; /* 40px */
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 700px) { /* 700px */
+  .section {
+    padding-top: 3.75rem; /* 60px */
+    padding-bottom: 3.75rem;
+  }
+
+  .flex {
+    justify-content: normal;
+  }
+
+  .mobile-hidden {
+    display: block;
+  }
+
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) { /* 1200px */
+  .container {
+    padding-left: clamp(1rem, 5vw, 5rem); /* 16px → 80px */
+    padding-right: clamp(1rem, 5vw, 5rem);
+  }
+
+  .section {
+    padding-top: 5rem; /* 80px */
+    padding-bottom: 5rem;
+  }
+}
+

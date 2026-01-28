@@ -1,0 +1,96 @@
+/* Basis-Layout */
+.about-hero-section {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 10rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hintergrundbilder pro Typ */
+.hero-aboutMe {
+  background-image: url('/assets/images/hero/about_me_hero_one.jpg');
+}
+
+.hero-project {
+  background-image: url('/assets/images/hero/project_hero.jpg');
+}
+
+.hero-service {
+  background-image: url('/assets/images/hero/project_hero.jpg');
+}
+
+.about-hero-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.about-hero-textbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--primary-brown);
+}
+
+.about-hero-line {
+  display: block;
+  line-height: 1;
+  letter-spacing: 0.05rem;
+}
+
+
+.about-hero-line-1 {
+  font-size: clamp(4rem, 7vw, 6rem);
+  margin-right: 3rem;
+}
+
+
+.about-hero-line-2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  padding-right: 3rem;
+}
+
+.about-hero-line-3 {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  letter-spacing: 0.1rem;
+}
+
+.about-hero-line-4 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  padding-left: 3rem;
+}
+
+@media (min-width: 1024px) {
+
+  .about-hero-textbox {
+    left: 60px;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+
+  .about-hero-line-1 {
+    font-size: clamp(6rem, 6vw, 8rem);
+    margin-left: 4rem;
+  }
+
+  .about-hero-line-2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    padding-left: 6rem;
+  }
+
+  .about-hero-line-3 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+
+  .about-hero-line-4 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    padding-left: 16rem;
+  }
+}

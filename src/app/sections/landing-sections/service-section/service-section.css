@@ -1,0 +1,153 @@
+/* SECTION WRAPPER */
+.service-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* GRID */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* --- LEFT COLUMN --- */
+.service-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.service-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: bold;
+  color: var(--primary-brown);
+  text-align: center;
+  letter-spacing: 0.15em;
+  padding-top: 1rem;
+}
+
+.service-image {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* --- RIGHT COLUMN --- */
+.service-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* SERVICE BLOCK */
+.service-block {
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+/* HEADER */
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.service-block-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: bold;
+  color: var(--primary-brown);
+}
+
+/* CONTENT */
+.service-content {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Vertical line */
+.service-line {
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-green);
+  opacity: 0.8;
+}
+
+/* TEXT */
+.service-text-bold {
+  color: var(--primary-green);
+  font-weight: bold;
+  line-height: 1.6;
+  font-size: clamp(1.0rem, 2vw, 1.2rem);
+}
+
+.service-text {
+  margin-top: 1rem;
+  color: var(--primary-green);
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.service-price {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--primary-green);
+}
+
+/* BUTTON */
+.service-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--primary-brown);
+  background: var(--primary-brown);
+  color: var(--primary-white);
+  border-radius: 999px;
+  transition: 0.25s ease;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.service-btn:hover {
+  background: transparent;
+  color: var(--primary-green);
+  cursor: pointer;
+}
+
+/* --- DESKTOP LAYOUT --- */
+@media (min-width: 1024px) {
+
+  .service-image {
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .service-content {
+    padding-left: 3rem;
+  }
+
+  .service-line {
+    left: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+}

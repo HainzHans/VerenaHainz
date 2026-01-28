@@ -1,0 +1,37 @@
+<section
+  class="about-me-container"
+  id="about"
+  [ngStyle]="{ 'background-color': !withBackground() ? 'var(--primary-white)' : 'transparent' }"
+>
+  <div class="container about-me-content">
+
+    <!-- Linke Seite: Bild -->
+    <div class="about-me-image">
+      <img class="" src="{{imageUrl()}}" alt="Über mich" >
+    </div>
+
+    <!-- Rechte Seite: Text + Button -->
+    <div class="about-me-text">
+      <div class="about-me-heading">
+        <p class="about-me-line1">Servus,</p>
+        <p class="about-me-line2">{{subTitle()}}</p>
+      </div>
+
+      <span class="about-me-subtitle">
+       {{subText()}}
+      </span>
+
+      <span>
+        {{text()}}
+      </span>
+
+      @if (displayButton()) {
+        <app-navigation-button
+          [buttonTitle]="'Neugierig?'"
+          [navigateTo]="'/about'"
+        ></app-navigation-button>
+      }
+    </div>
+
+  </div>
+</section>

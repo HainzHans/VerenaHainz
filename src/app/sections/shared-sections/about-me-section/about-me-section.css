@@ -1,0 +1,103 @@
+/* ===========================
+   ABOUT ME – MOBILE FIRST
+   =========================== */
+
+.about-me-container {
+  color: var(--primary-green);
+  border-top-right-radius: 10rem;
+}
+
+/* Layout mobile: untereinander */
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 2rem;
+}
+
+/* Bild */
+.about-me-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-bottom-right-radius: 6rem;
+  border-top-left-radius: 6rem;
+}
+
+/* Textbereich */
+.about-me-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+/* Heading Wrapper */
+.about-me-heading {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Erste Zeile – groß, cursive */
+.about-me-line1 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--primary-green);
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Zweite Zeile – kleiner */
+.about-me-line2 {
+  color: var(--primary-green);
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  margin: 0.25rem 0 0 0;
+}
+
+
+.about-me-subtitle {
+  font-weight: bold;
+}
+
+/* ===========================
+   DESKTOP / TABLET
+   =========================== */
+
+@media (min-width: 800px) {
+
+  .about-me-content {
+    flex-direction: row;
+    align-items: center;
+    padding: 6rem;
+    gap: 3rem;
+    line-height: 1.6;
+  }
+
+  /* Beide Seiten gleich breit */
+  .about-me-image,
+  .about-me-text {
+    flex: 1;
+  }
+
+  .about-me-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .about-me-heading {
+    text-align: left;
+  }
+
+  /* Zweite Zeile – Versatz wie Tailwind */
+  .about-me-line2 {
+    margin-top: -1.25rem;
+    padding-left: clamp(4rem, 8vw, 8rem);
+  }
+
+  .about-me-image img {
+    max-width: 100%;
+  }
+}

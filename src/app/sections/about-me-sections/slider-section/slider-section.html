@@ -1,0 +1,61 @@
+<section class="slider-section section">
+  <div class="container">
+
+    <!-- Überschrift + Icon -->
+    <div class="slider-header">
+      <img src="assets/images/star/large-star.png" alt="Icon" class="slider-icon" />
+      <h2 class="slider-title">WARUM ICH?</h2>
+    </div>
+
+    <!-- Slider Wrapper -->
+    <div class="slider-wrapper">
+
+      <!-- LEFT ARROW -->
+      <div class="slider-arrow slider-arrow-left" (click)="prevSlide()">
+        <img src="assets/icons/chevron_right.svg" class="arrow-icon arrow-left" />
+      </div>
+
+      <!-- RIGHT ARROW -->
+      <div class="slider-arrow slider-arrow-right" (click)="nextSlide()">
+        <img src="assets/icons/chevron_right.svg" class="arrow-icon" />
+      </div>
+
+
+      <!-- Slider Track -->
+      <div
+        class="slider-track"
+        [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+        (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd()"
+      >
+
+        @for (slide of slides; track $index) {
+          <div class="slider-item">
+
+            <img [src]="slide.image" class="slider-image" />
+
+            <div class="slider-overlay">
+              <h3 class="slider-title-big">{{ slide.title }}</h3>
+              <p class="slider-text">{{ slide.text }}</p>
+            </div>
+
+          </div>
+        }
+
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="slider-dots">
+      @for (slide of slides; track $index) {
+        <button
+          (click)="goToSlide($index)"
+          class="slider-dot"
+          [class.active]="$index === currentSlide"
+        ></button>
+      }
+    </div>
+
+  </div>
+</section>

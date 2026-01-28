@@ -1,0 +1,73 @@
+.hero-background {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/hero/landing_hero.jpg');
+  display: flex;
+  align-items: center; /* Container vertikal mittig */
+  border-bottom-left-radius: 10rem;
+}
+
+/* MOBILE: Textbox zentral */
+.hero-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;   /* horizontal zentriert */
+  align-items: center;       /* vertikal zentriert */
+}
+
+/* Textbox */
+.hero-textbox {
+  background-color: var(--primary-white-transparent);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+  border-radius: 2rem;
+  text-align: justify;
+  color: var(--primary-green);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text {
+  text-align: center;
+  color: var(--primary-brown);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+}
+
+.hero-subtext {
+  text-align: center;
+  color: var(--primary-green);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  padding: 1rem 0;
+}
+
+.hero-letter-spacing {
+  letter-spacing: 0.25rem;
+}
+
+
+.hero-bold-text {
+  font-weight: bold;
+  font-size: clamp(3rem, 5vw, 6rem);
+}
+
+/* --- AB 700px: rechts im Container --- */
+@media (min-width: 1024px) {
+  .hero-content {
+    justify-content: flex-end; /* rechts */
+  }
+
+  .hero-textbox {
+    text-align: justify;
+    padding: 2rem;
+  }
+
+  .hero-text {
+  }
+}
+
+

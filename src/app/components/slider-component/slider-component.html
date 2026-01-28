@@ -1,0 +1,20 @@
+<div #wrapper class="before-after-wrapper">
+
+  <!-- BEFORE -->
+  <div #beforeWrapper class="before-image-wrapper" [style.width.px]="beforeWidth">
+    <div class="before-image" [style.backgroundImage]="'url(' + beforeImage + ')'"></div>
+  </div>
+
+  <!-- AFTER -->
+  <div class="after-image" [style.backgroundImage]="'url(' + afterImage + ')'"></div>
+
+  <!-- HANDLE -->
+  <span
+    #handle
+    class="handle draggable"
+    [style.left.px]="beforeWidth"
+    (mousedown)="startDrag($event)"
+    (touchstart)="startDrag($event)"
+  ></span>
+
+</div>

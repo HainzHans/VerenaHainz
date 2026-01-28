@@ -1,0 +1,72 @@
+<section class="service-section section">
+  <div class="container">
+
+    <!-- TITLE AREA -->
+    <div class="service-header">
+      <div class="service-title-row">
+        <img src="assets/images/star/large-star.png" alt="Icon" class="service-title-icon" />
+        <h2 class="service-title font-display">{{ title() }}</h2>
+      </div>
+
+      <p class="service-intro">
+        {{ intro() }}
+      </p>
+    </div>
+
+    <!-- PANELS -->
+    <div class="service-panels">
+
+      @for (panel of panels(); track panel.id) {
+
+        <div class="service-panel">
+
+          <!-- HEADER -->
+          <button
+            class="service-panel-header"
+            (click)="togglePanel(panel.id)"
+          >
+            <div class="service-panel-header-left">
+              <img src="assets/images/star/large-star.png" class="service-panel-star" alt="Star" />
+
+              <div class="service-panel-title-wrapper">
+                <span class="service-panel-step mobile-only">
+                  {{ panel.id }}.
+                </span>
+
+                <span class="service-panel-step desktop-only">
+                  Schritt {{ panel.id }}
+                </span>
+
+                <span class="service-panel-title">
+                  {{ panel.title }}
+                </span>
+              </div>
+            </div>
+
+            <img
+              src="assets/icons/keyboard_arrow_down.svg"
+              class="service-panel-arrow"
+              [class.rotate]="openPanels.has(panel.id)"
+              alt="arrow"
+            />
+          </button>
+
+          <!-- CONTENT -->
+          <div
+            #panelRef
+            class="service-panel-content-wrapper"
+            [style.maxHeight]="openPanels.has(panel.id) ? panelHeights[panel.id] + 'px' : '0px'"
+          >
+            <div class="service-panel-content">
+              {{ panel.content }}
+            </div>
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>

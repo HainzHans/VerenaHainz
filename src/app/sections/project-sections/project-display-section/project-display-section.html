@@ -1,0 +1,65 @@
+<section
+  class="project-section section"
+  [ngStyle]="{ 'background': background() || 'transparent' }"
+>
+  <div class="container project-container">
+
+    <div class="project-grid" [class.layout-right]="layout() === 'right'">
+
+      <!-- MEDIA SIDE -->
+      <div class="project-media">
+
+        <!-- BEFORE/AFTER SLIDER -->
+        <app-slider-component
+          [beforeImage]="beforeImage()"
+          [afterImage]="afterImage()"
+          class="project-slider"
+        ></app-slider-component>
+
+        <!-- SMALL IMAGES (Desktop only) -->
+        <div class="project-small-images">
+          <img
+            [src]="firstSmallImage()"
+            alt="Small Left"
+            class="project-small-image"
+          />
+          <img
+            [src]="secondSmallImage()"
+            alt="Small Right"
+            class="project-small-image"
+          />
+        </div>
+
+      </div>
+
+      <!-- TEXT SIDE -->
+      <div
+        class="project-text"
+        [class.text-right]="layout() === 'right'"
+        [class.text-left]="layout() === 'left'"
+      >
+
+
+      <h2 class="project-title font-display">
+          {{ title() }}
+        </h2>
+
+        <p class="project-description">
+          {{ text() }}
+        </p>
+
+        <!-- STAR (Desktop only) -->
+        <div class="project-star">
+          <img
+            src="assets/images/star/large-star.png"
+            alt="Star"
+            class="project-star-icon"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

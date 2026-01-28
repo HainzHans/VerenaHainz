@@ -1,0 +1,67 @@
+<section class="contact-section" id="contact">
+
+  <!-- Grüner Header / Separator -->
+  <div class="contact-header">
+    <h2 class="contact-header-title font-display">
+      Du verdienst mehr als ganz <br />
+      okay – genau wie dein <br />
+      Zuhause
+    </h2>
+  </div>
+
+  <!-- Formular-Wrapper (schwebt über dem Grün) -->
+  <div class="contact-form-container">
+    <form
+      class="contact-form shadow"
+      (ngSubmit)="submitForm()"
+      #contactForm="ngForm"
+    >
+
+      <img src="assets/images/star/large-star.png" alt="Icon" class="contact-star" />
+
+      <h2 class="contact-title font-display">SCHREIB' MA GERN</h2>
+
+      <div class="contact-subtitle">
+        <p>Hast du Fragen oder möchtest ein Projekt starten?</p>
+        <p>Dann ist hier Platz für deine Nachricht.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" [(ngModel)]="formData.name" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input id="email" name="email" type="email" [(ngModel)]="formData.email" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="5" [(ngModel)]="formData.message"></textarea>
+      </div>
+
+      <mat-checkbox [(ngModel)]="agbAccepted" name="agb">
+        Mit Absenden deiner Nachricht akzeptierst du die AGBs
+      </mat-checkbox>
+
+      <div class="contact-submit">
+        <button type="submit" [disabled]="!agbAccepted" class="contact-btn">
+          ABSENDEN
+        </button>
+
+        @if (sendSuccess) {
+          <div class="contact-success">Nachricht wurde erfolgreich abgeschickt, vielen Dank</div>
+        }
+
+        @if (sendFailure) {
+          <div class="contact-error">
+            Es gab einen Fehler, bitte versuchen Sie es erneut oder schreiben Sie direkt an Mail@verena-hainz.de
+          </div>
+        }
+      </div>
+
+    </form>
+  </div>
+
+</section>

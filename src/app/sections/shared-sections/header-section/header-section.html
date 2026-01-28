@@ -1,0 +1,33 @@
+<header id="header" class="site-header shadow">
+  <div class="container flex-between">
+
+    <div class="logo" (click)="scrollToSection('home')">
+      <img src="assets/images/logo/small-logo.png" alt="Logo klein" class="logo-small hover">
+      <img src="assets/images/logo/large-logo.png" alt="Logo" class="logo-large hover">
+    </div>
+
+    <nav class="main-nav">
+      <ul class="flex">
+        <li><a (click)="scrollToSection('about')">Über mich</a></li>
+        <li><a (click)="scrollToSection('projects')">Projekte</a></li>
+        <li><a (click)="scrollToSection('services')">Leistungen</a></li>
+      </ul>
+
+      <app-primary-button></app-primary-button>
+    </nav>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <img src="assets/icons/menu.svg" class="w-6 h-6" alt="menu"/>
+    </button>
+  </div>
+
+  @if (isMenuOpen) {
+    <nav class="mobile-nav">
+      <a (click)="scrollToSection('about')">Über mich</a>
+      <a (click)="scrollToSection('projects')">Projekte</a>
+      <a (click)="scrollToSection('service')">Leistungen</a>
+    </nav>
+  }
+
+
+</header>

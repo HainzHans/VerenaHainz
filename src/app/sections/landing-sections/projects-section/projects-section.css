@@ -1,0 +1,148 @@
+/* GRID – mobile first */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+/* PROJECT ITEM */
+.project {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 250px; /* mobile */
+}
+
+/* Hintergrundbild über Pseudo-Element */
+.project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  z-index: 1;
+}
+
+/* Abdunklungsschicht */
+.project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.0);
+  transition: background 0.4s ease;
+  z-index: 2;
+}
+
+/* Overlay (Text + Button) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  color: var(--primary-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+  z-index: 3;
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+/* Hover-Effekte */
+.project:hover::before {
+  transform: scale(1.05);
+  filter: brightness(0.7);
+}
+
+.project:hover::after {
+  background: rgba(0,0,0,0.35);
+}
+
+/* Overlay Text */
+.overlay h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Button */
+.project-btn {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--primary-brown);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.project-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--primary-brown);
+}
+
+
+/* Hintergrundbilder */
+.project-1::before { background-image: url('/assets/images/projects/inProgress/inProgress.jpg'); }
+.project-2::before { background-image: url('/assets/images/projects/bergler/model_bergler_1.jpg'); }
+.project-3::before { background-image: url('/assets/images/projects/schlafzimmer/model_schlafzimmer_landingpage_1.jpg'); }
+.project-4::before { background-image: url('/assets/images/projects/wohnzimmer/model_wohnzimmer_1.jpg'); }
+
+/* DESKTOP GRID ab 700px */
+@media (min-width: 700px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  .project {
+    height: 100%;
+  }
+
+  .project-1 {
+    grid-column: 1;
+    grid-row: 1;
+    border-top-left-radius: 2rem;
+  }
+
+  .project-2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .project-3 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
+  .project-4 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    border-bottom-left-radius: 2rem;
+  }
+}

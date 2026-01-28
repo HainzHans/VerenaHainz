@@ -1,0 +1,148 @@
+/* SECTION */
+.project-section {
+  width: 100%;
+  overflow: hidden;
+  border-top-right-radius: 0
+}
+
+/* GRID */
+.project-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* MOBILE-FIRST: IMMER Bild oben, Text unten */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  width: 100%;
+  grid-template-areas:
+    "media"
+    "text";
+}
+
+/* IMPORTANT: layout-right NICHT im Mobile anwenden! */
+/* Entfernt: .project-grid.layout-right { grid-template-areas: "text" "media"; } */
+
+/* MEDIA SIDE */
+.project-media {
+  grid-area: media;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* SLIDER */
+.project-slider {
+  width: 100%;
+  max-width: 40rem;
+}
+
+/* SMALL IMAGES */
+.project-small-images {
+  display: none;
+}
+
+.project-small-image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+/* TEXT SIDE */
+.project-text {
+  grid-area: text;
+  text-align: center;
+}
+
+.project-title {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.project-description {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem auto;
+  color: var(--primary-green);
+}
+
+/* STAR */
+.project-star {
+  display: none;
+}
+
+.project-star-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+
+  .project-section {
+    width: 100%;
+    overflow: hidden;
+    border-top-right-radius: 10rem;
+  }
+
+  /* Standard Desktop Layout: Bild links, Text rechts */
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    grid-template-areas: "media text";
+    align-items: center;
+  }
+
+  /* Layout RIGHT: Text links, Bild rechts */
+  .project-grid.layout-right {
+    grid-template-areas: "text media";
+  }
+
+  .project-small-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    max-width: 40rem;
+  }
+
+  .project-star {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .project-grid.layout-right .project-star {
+    justify-content: flex-end;
+  }
+
+  .project-text.text-left {
+    text-align: left;
+  }
+
+  .project-text.text-right {
+    text-align: right;
+  }
+
+  .project-description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .project-text.text-right .project-description {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .project-text.text-left .project-description {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
