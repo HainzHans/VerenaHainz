@@ -62,6 +62,11 @@
   font-weight: bold;
 }
 
+.text-section-paragraph {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  line-height: 1.2;
+}
+
 /* ===========================
    DESKTOP / TABLET
    =========================== */
@@ -99,5 +104,9 @@
 
   .about-me-image img {
     max-width: 100%;
+  }
+
+  .text-section-paragraph {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
   }
 }
