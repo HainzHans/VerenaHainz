@@ -2,7 +2,6 @@
   background-color: var(--primary-white);
   color: var(--primary-green);
   padding: 4rem 1rem;
-  border-top-left-radius: 10rem;
 }
 
 .checklist-title {
@@ -36,7 +35,8 @@
 
 
 /* Tablet */
-@media (min-width: 700px) {
-  .checklist-grid {
+@media (min-width: 1024px) {
+  .checklist-container {
+    border-top-left-radius: 10rem;
   }
 }

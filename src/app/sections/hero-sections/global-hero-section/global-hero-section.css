@@ -5,7 +5,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-bottom-left-radius: 10rem;
   position: relative;
   overflow: hidden;
 }
@@ -68,6 +67,10 @@
 }
 
 @media (min-width: 1024px) {
+
+  .about-hero-section {
+    border-bottom-left-radius: 10rem;
+  }
 
   .about-hero-textbox {
     left: 60px;

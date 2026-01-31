@@ -4,7 +4,7 @@
 
 .about-me-container {
   color: var(--primary-green);
-  border-top-right-radius: 10rem;
+
 }
 
 /* Layout mobile: untereinander */
@@ -72,6 +72,10 @@
    =========================== */
 
 @media (min-width: 800px) {
+
+  .about-me-container {
+    border-top-right-radius: 10rem;
+  }
 
   .about-me-content {
     flex-direction: row;
